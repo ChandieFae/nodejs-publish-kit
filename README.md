@@ -1,16 +1,22 @@
-# nodejs-publish-kit
-
 # 🚀 Node.js Publish Kit
 
-This repo contains a **reusable GitHub Actions workflow** for testing and publishing Node.js packages to **GitHub Packages** using only the built-in `GITHUB_TOKEN`.
+A reusable GitHub Actions workflow to test and publish Node.js packages to GitHub Packages using only the built-in `GITHUB_TOKEN`.
 
 ---
 
-## 🔁 How to Use in Your Project
+## 📦 Features
 
-In your own Node.js project repo (like `test-package`), create this workflow file:
+- ✅ Reusable workflow for GitHub Packages
+- ✅ Automates testing and publishing on release
+- ✅ No need for external secrets or tokens
 
-`.github/workflows/release.yml`
+---
+
+## 🔧 How to Use in Your Project
+
+In your Node.js project repository (e.g., `test-package`), create the following workflow file:
+
+### `.github/workflows/release.yml`
 
 ```yaml
 name: Release
@@ -25,8 +31,15 @@ jobs:
     with:
       node-version: '20'
 
+{
+  "name": "@your-username/your-package",
+  "version": "1.0.0",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  }
+}
 
-nodejs-publish-kit/.github/workflows/publish-gpr.yml
-
-✅ Reusable workflow for GitHub Packages
-✅ Instructions for using the workflow
+nodejs-publish-kit/
+└── .github/
+    └── workflows/
+        └── publish-gpr.yml
